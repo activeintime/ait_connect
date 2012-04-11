@@ -4,7 +4,7 @@ require "ait_connect/version"
 
 Gem::Specification.new do |s|
   s.name        = "ait_connect"
-  s.version     = "0.1"
+  s.version     = AITConnect::VERSION
   s.authors     = ["Daniel Morgan"]
   s.email       = ["danmorgz@gmail.com"]
   s.homepage    = ""

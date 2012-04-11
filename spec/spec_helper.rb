@@ -11,8 +11,7 @@ RSpec.configure do |config|
   end
   
   def valid_api_client
-    #ActiveInTime::Base.new("EvVqRnFW4R53IUvcjP4uPjXzaQxNhNMCMZ2G5j5l","iE8iBM7tVXGlqF179qdr7UWhyPFIBROQ2tjtmE8M") #production
-    ActiveInTime::Base.new("UgMivQQWXNiTpfMNl5nNzWz9nj9jQF7TjZnRgDES","tWqe4qyXwsrift4wJqDDHY5MqV8TU2bpy9pTGGEX") #localhost
+    #ActiveInTime::Base.new("","") #production
     
   end
   

@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "active_in_time")
+require File.join(File.dirname(__FILE__), "ait_connect")
 
 ##Localhost
 API_KEY = ''
