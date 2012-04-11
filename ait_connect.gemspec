@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = "ait_connect"
   s.version     = AITConnect::VERSION
   s.authors     = ["Daniel Morgan"]
-  s.email       = ["danmorgz@gmail.com"]
+  s.email       = ["danmorgz@googlemail.com"]
   s.homepage    = ""
   s.summary     = "Write a gem summary"
   s.description = "Write a gem description"
