@@ -1,6 +1,6 @@
 module ActiveInTime
   class Base
-    API = "http://api.activeintime.com/v1/"
+    API = "https://api.activeintime.com/v1/"
     #API = "http://api.lvh.me:3000/v1/"
 
     def initialize(*args)
@@ -103,9 +103,9 @@ module ActiveInTime
 
     private
     
-    def oauth2_url(method_name, params)
-      "https://foursquare.com/oauth2/#{method_name}?#{params.to_query}"
-    end
+    # def oauth2_url(method_name, params)
+    #   "https://foursquare.com/oauth2/#{method_name}?#{params.to_query}"
+    # end
 
     def camelize(params)
       params.inject({}) { |o, (k, v)|

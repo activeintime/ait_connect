@@ -19,7 +19,7 @@ module ActiveInTime
     end
     
     def start_time
-      Time.parse(@json["end_time"])
+      Time.parse(@json["start_time"])
     end
     
     def end_time
@@ -28,6 +28,11 @@ module ActiveInTime
     
     def date
       Date.parse(@json["date"])
+    end
+
+    def facility
+      return nil if !@json['facility']
+      ActiveInTime::Facility.new(@active_in_time,@json['facility'])
     end
     
     def term_type

@@ -19,7 +19,7 @@ module ActiveInTime
       @json["name"]
     end
     
-    def times(options = {})
+    def timetable_entries(options = {})
       @active_in_time.timetable_entries.find(self.id,options)
     end
     
