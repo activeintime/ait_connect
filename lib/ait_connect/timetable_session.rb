@@ -13,6 +13,10 @@ module ActiveInTime
     def name
       @json["name"]
     end
+
+    def description
+      @json["description"]
+    end
     
     def timetable_session_category
       return nil if !@json['timetable_session_category']
