@@ -60,6 +60,7 @@ module ActiveInTime
       @json["timetable_id"]
     end
     
+    #not sure what this is.
     def name
       @json["name"]
     end
