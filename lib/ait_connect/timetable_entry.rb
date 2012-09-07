@@ -19,11 +19,11 @@ module ActiveInTime
     end
     
     def start_time
-      Time.parse(@json["start_time"])
+      Time.zone.parse(@json["start_time"])
     end
     
     def end_time
-      Time.parse(@json["end_time"])
+      Time.zone.parse(@json["end_time"])
     end
     
     def date
