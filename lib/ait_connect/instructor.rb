@@ -10,9 +10,17 @@ module ActiveInTime
       @json["id"]
     end
 
-    def name
-      @json["name"]
+    def first_name
+      @json["first_name"]
     end
     
+    def last_name
+      @json["last_name"]
+    end
+    
+    def display_name
+      @json["display_name"]
+    end
+
   end
 end
