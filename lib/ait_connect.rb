@@ -21,6 +21,7 @@ require "ait_connect/timetable_session"
 require "ait_connect/instructor"
 require "ait_connect/level"
 require "ait_connect/timetable_session_category"
+require "ait_connect/management"
 
 require "ait_connect/facility"
 require "ait_connect/facility_type"

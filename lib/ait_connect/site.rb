@@ -95,6 +95,11 @@ module ActiveInTime
       facilities
       
     end
+
+    def management
+      return {} if @json["management"].blank?
+      return ActiveInTime::Management.new(@active_in_time,@json["management"])
+    end
     
     
     #     # not all photos may be present here (but we try to avoid one extra API call)
