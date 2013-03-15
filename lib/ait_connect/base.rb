@@ -4,13 +4,19 @@ module ActiveInTime
     #API = "http://api.lvh.me:3000/v1/"
 
     def initialize(*args)
+
+
       case args.size
       when 1
         @access_token = args.first
       when 2
         @key, @secret = args
+      when 3
+        @key = args[0]
+        @secret = args[1]
+        self.API = args[2]
       else
-        raise ArgumentError, "You need to pass either an access_token or key and secret"
+        raise ArgumentError, "You need to pass either an access_token, key and secret or key, secret and API call"
       end
     end
 
