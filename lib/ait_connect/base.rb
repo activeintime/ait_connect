@@ -14,7 +14,7 @@ module ActiveInTime
       when 3
         @key = args[0]
         @secret = args[1]
-        self.API = args[2]
+        @API = args[2]
       else
         raise ArgumentError, "You need to pass either an access_token, key and secret or key, secret and API call"
       end
