@@ -46,6 +46,9 @@ module ActiveInTime
 
     def get(path, params={})
       params = camelize(params)
+      if I18n
+        params = params.merge({locale: I18n.locale})
+      end
       ActiveInTime.log("GET #{@api + path}")
       ActiveInTime.log("PARAMS: #{params.inspect}")
       merge_auth_params(params)
@@ -56,6 +59,9 @@ module ActiveInTime
 
     def post(path, params={})
       params = camelize(params)
+      if I18n
+        params = params.merge({locale: I18n.locale})
+      end
       ActiveInTime.log("POST #{@api + path}")
       ActiveInTime.log("PARAMS: #{params.inspect}")
       merge_auth_params(params)
