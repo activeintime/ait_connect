@@ -25,6 +25,14 @@ module ActiveInTime
 
     #####
     ##
+    ## Name Translations
+
+    def name_translations
+      @json["name_translations"]
+    end
+
+    #####
+    ##
     ## Contact info
     
     def contact
