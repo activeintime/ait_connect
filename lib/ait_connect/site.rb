@@ -46,6 +46,10 @@ module ActiveInTime
     def country
       self.contact['country']
     end
+
+    def swimmers_guide_id
+      self.contact['swimmers_guide_id']
+    end
     
     def borough
       self.contact['borough']
