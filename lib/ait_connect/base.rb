@@ -1,16 +1,22 @@
 module ActiveInTime
   class Base
-    API = "https://api.activeintime.com/v1/"
+    @api = "https://api.activeintime.com/v1/"
     #API = "http://api.lvh.me:3000/v1/"
 
     def initialize(*args)
+
+
       case args.size
       when 1
         @access_token = args.first
       when 2
         @key, @secret = args
+      when 3
+        @key = args[0]
+        @secret = args[1]
+        @api = args[2]
       else
-        raise ArgumentError, "You need to pass either an access_token or key and secret"
+        raise ArgumentError, "You need to pass either an access_token, key and secret or key, secret and API call"
       end
     end
 
@@ -40,20 +46,26 @@ module ActiveInTime
 
     def get(path, params={})
       params = camelize(params)
-      ActiveInTime.log("GET #{API + path}")
+      if I18n
+        params = params.merge({locale: I18n.locale})
+      end
+      ActiveInTime.log("GET #{@api + path}")
       ActiveInTime.log("PARAMS: #{params.inspect}")
       merge_auth_params(params)
-      response = JSON.parse(Typhoeus::Request.get(API + path + '.json', :params => params).body)
+      response = JSON.parse(Typhoeus::Request.get(@api + path + '.json', :params => params).body)
       ActiveInTime.log(response.inspect)
       error(response) || response["response"]
     end
 
     def post(path, params={})
       params = camelize(params)
-      ActiveInTime.log("POST #{API + path}")
+      if I18n
+        params = params.merge({locale: I18n.locale})
+      end
+      ActiveInTime.log("POST #{@api + path}")
       ActiveInTime.log("PARAMS: #{params.inspect}")
       merge_auth_params(params)
-      response = JSON.parse(Typhoeus::Request.post(API + path, :params => params).body)
+      response = JSON.parse(Typhoeus::Request.post(@api + path, :params => params).body)
       ActiveInTime.log(response.inspect)
       error(response) || response["response"]
     end

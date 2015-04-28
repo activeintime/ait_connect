@@ -25,6 +25,14 @@ module ActiveInTime
 
     #####
     ##
+    ## Name Translations
+
+    def name_translations
+      @json["name_translations"]
+    end
+
+    #####
+    ##
     ## Contact info
     
     def contact
@@ -41,6 +49,10 @@ module ActiveInTime
 
     def country_id
       self.contact['country_id']
+    end
+
+    def swimmers_guide_id
+      self.contact['swimmers_guide_id']
     end
     
     def borough
