@@ -38,6 +38,10 @@ module ActiveInTime
     def country
       self.contact['country']
     end
+
+    def country_id
+      self.contact['country_id']
+    end
     
     def borough
       self.contact['borough']
